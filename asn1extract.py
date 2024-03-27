@@ -15,7 +15,7 @@ class Parser:
         self.ofp = None
         self.pvstring = None
 
-    def load(self, filename):
+    def load_file(self, filename):
         text = docx2txt.process(filename)
 
         lines = [i for i in text.split("\n") if i]
@@ -52,7 +52,7 @@ class Parser:
         return this
 
     def parse_file(self, filename):
-        lines = self.load(filename)
+        lines = self.load_file(filename)
         prev = lines[0]
         for line in lines[1:]:
             prev = self.process_line(line, prev)
