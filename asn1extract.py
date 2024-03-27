@@ -58,6 +58,10 @@ class Parser:
             prev = self.process_line(line, prev)
 
 if __name__ == '__main__':
+    if len(sys.argv) <= 1:
+        print(f"Usage: {sys.argv[0]} file1 [file2 ..]")
+        sys.exit(1)
+
     for doc in sys.argv[1:]:
         try:
             Parser().parse_file(doc)
