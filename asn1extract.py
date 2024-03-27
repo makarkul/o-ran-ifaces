@@ -73,7 +73,7 @@ class Parser:
                                     "-".join(prev.split()[1:]) + 
                                     "-" + self.pvstring[1] + 
                                     ".asn", 
-                                "wb")
+                                "wt")
             else:
                 raise Exception("Error: ASN1START encountered in parsing state")
         elif this == '-- ASN1STOP':
